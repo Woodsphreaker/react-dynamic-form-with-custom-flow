@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Form, Input, Select } from '../../components/Form'
+import { Form, Input, Select, Textarea } from '../../components/Form'
 
 // import { Container } from './styles';
 
@@ -22,9 +22,13 @@ function Screen1() {
         <button type="submit"> Send </button>
       </Form>
 
-      <Form initialState={{ name2: 'lorem ipsum' }} onSubmit={handleSubmit}>
+      <Form
+        initialState={{ name2: 'lorem ipsum', text1: 'lorem ipsum dolor' }}
+        onSubmit={handleSubmit}
+      >
         <Input type="text" name="name2" />
         <Input type="password" name="pass" />
+        <Textarea name="text1" />
         <button type="submit"> Send </button>
       </Form>
 

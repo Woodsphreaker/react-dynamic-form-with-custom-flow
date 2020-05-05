@@ -42,3 +42,5 @@ export const Input = (props) => <input {...props} />
 export const Select = ({ children, ...props }) => {
   return <select {...props}>{children}</select>
 }
+
+export const Textarea = (props) => <textarea {...props} />
