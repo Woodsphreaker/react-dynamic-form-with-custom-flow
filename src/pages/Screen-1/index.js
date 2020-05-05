@@ -16,8 +16,8 @@ function Screen1() {
 
   return (
     <>
-      <Form initialState={INITIAL} onSubmit={handleSubmit}>
-        <Input type="text" name="name1" />
+      <Form onSubmit={handleSubmit}>
+        <Input type="text" name="name1" placeholder="Name" />
         <Input type="password" name="pass" />
         <button type="submit"> Send </button>
       </Form>

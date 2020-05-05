@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import { Container } from './styles'
-
 const serializeForm = (formData) => {
   return Array.from(formData).reduce((acc, [key, value]) => {
     if (value) {
