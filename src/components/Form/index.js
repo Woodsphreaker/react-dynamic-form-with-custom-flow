@@ -17,7 +17,7 @@ const setProps = (source, props) => {
 }
 
 const populateForm = (initialState, children) => {
-  return children.map(({ props, ...rest }) => ({
+  return [].concat(...children).map(({ props, ...rest }) => ({
     ...rest,
     props: setProps(initialState, props),
   }))
