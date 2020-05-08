@@ -4,7 +4,7 @@ import { Form, Input, Select, Textarea } from '../../components/Form'
 
 // import { Container } from './styles';
 
-function Screen1() {
+function Screen6() {
   const handleSubmit = (values) => {
     console.log(values)
   }
@@ -56,4 +56,4 @@ function Screen1() {
   )
 }
 
-export default Screen1
+export default Screen6

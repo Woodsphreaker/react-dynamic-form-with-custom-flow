@@ -11,12 +11,19 @@ const serializeForm = (formData) => {
 
 const setProps = (source, props) => {
   const { name } = props
+
+  if (!name) {
+    return props
+  }
+
   const defaultValue = source[name]
 
   return { ...props, defaultValue }
 }
 
 const populateForm = (initialState, children) => {
+  console.log(children, [].concat(...children))
+
   return [].concat(...children).map(({ props, ...rest }) => ({
     ...rest,
     props: setProps(initialState, props),
