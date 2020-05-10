@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import {
   Root,
@@ -14,6 +15,12 @@ import {
 } from './styles'
 
 function Dashboard() {
+  const history = useHistory()
+
+  const handleClick = (path) => {
+    history.push(path)
+  }
+
   return (
     <>
       <Root>
@@ -84,12 +91,12 @@ function Dashboard() {
                 <FieldLabel>Endereço</FieldLabel>
               </Card>
             </CardContainer>
-            <Button>Go to flow</Button>
+            <Button onClick={() => handleClick('/screen-1')}>Go to flow</Button>
           </Content>
 
           <FlowTitle> Flow 2 </FlowTitle>
           <Content>
-            <Card>
+            <Card bgColor="#758ee6">
               <Section bgColor="#758ee6">Cadastro PF Menor de 18 Anos</Section>
             </Card>
             <NextArrow />
@@ -153,7 +160,7 @@ function Dashboard() {
                 <FieldLabel>Endereço</FieldLabel>
               </Card>
             </CardContainer>
-            <Button>Go to flow</Button>
+            <Button onClick={() => handleClick('/screen-2')}>Go to flow</Button>
           </Content>
         </Container>
       </Root>

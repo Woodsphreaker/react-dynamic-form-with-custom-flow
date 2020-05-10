@@ -1,0 +1,124 @@
+[ 
+  {
+    "name": "Lorem Ipsum",
+    "intialRoute": "screen1",
+    "color": "#758ee6",
+    "routes": {
+      "screen1": {
+        "color": "#264653",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "screen2"
+      },
+      "screen2": {
+        "color": "#2a9d8f",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "screen3"
+      },
+      "screen3": {
+        "color": "#e9c46a",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "none"
+      }
+    }
+  },
+  {
+    "name": "Lorem Ipsum",
+    "intialRoute": "screen1",
+    "color": "#758ee6",
+    "routes": {
+      "screen1": {
+        "color": "#264653",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "screen2"
+      },
+      "screen2": {
+        "color": "#2a9d8f",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "screen3"
+      },
+      "screen3": {
+        "color": "#e9c46a",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome"
+          },
+          {
+            "name": "email",
+            "label": "Email"
+          },
+          {
+            "name": "pass",
+            "label": "Password"
+          }
+        ],
+        "nextScreen": "none"
+      }
+    }
+  }
+]

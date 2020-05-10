@@ -2,7 +2,8 @@
   "flows": [
     {
       "id": 1,
-      "name": "flow 1"
+      "name": "flow 1",
+      "color": "#758ee6"
     },
     {
       "id": 2,
@@ -18,8 +19,23 @@
     {
       "id": 1,
       "flowID": 1,
-      "screenName": "screen1", 
-      "fields": ["name", "email", "pass"],
+      "screenName": "Screen 1",
+      "route": "screen-1",
+      "color": "#264653",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ],
       "hasNextScreen": true,
       "nextScreenID": 2,
       "initial": true
@@ -27,23 +43,68 @@
     {
       "id": 2,
       "flowID": 1,
-      "screenName": "screen2", 
-      "fields": ["name", "email", "pass"],
+      "screenName": "Screen 2", 
+      "route": "screen-2",
+      "color": "#2a9d8f",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ],
       "hasNextScreen": true,
       "nextScreenID": 3 
     },
     {
       "id": 3,
       "flowID": 1,
-      "screenName": "screen3", 
-      "fields": ["name", "email", "pass"],
+      "screenName": "Screen 3", 
+      "route": "screen-3",
+      "color": "#e9c46a",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ],
       "hasNextScreen": false
     },
     {
       "id": 4,
       "flowID": 2,
-      "screenName": "screen2", 
-      "fields": ["name", "email", "pass"],
+      "screenName": "Screen 2", 
+      "route": "screen-2", 
+      "color": "#2a9d8f",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ],
       "hasNextScreen": true,
       "nextScreenID": 5,
       "initial": true
@@ -51,8 +112,23 @@
     {
       "id": 5,
       "flowID": 2,
-      "screenName": "screen2", 
-      "fields": ["name", "email", "pass"],
+      "screenName": "Screen 3", 
+      "route": "screen-3", 
+      "color": "#e9c46a",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ],
       "hasNextScreen": false
     }
   ]
