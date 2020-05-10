@@ -28,7 +28,7 @@ function Dashboard() {
           <FlowTitle> Flow 1 </FlowTitle>
           <Content>
             <Card bgColor="#758ee6">
-              <Section bgColor="#758ee6">Cadastro PF Maior de 18 Anos</Section>
+              <Section bgColor="#758ee6">Flow 1</Section>
             </Card>
             <NextArrow />
             <Card borderColor="#758ee6">
@@ -97,7 +97,7 @@ function Dashboard() {
           <FlowTitle> Flow 2 </FlowTitle>
           <Content>
             <Card bgColor="#758ee6">
-              <Section bgColor="#758ee6">Cadastro PF Menor de 18 Anos</Section>
+              <Section bgColor="#758ee6">Flow 2</Section>
             </Card>
             <NextArrow />
             <Card>
