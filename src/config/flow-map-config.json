@@ -1,0 +1,36 @@
+{
+  "flow1": {
+    "intialRoute": "screen1",
+    "routes": {
+      "screen1": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "screen2"
+      },
+      "screen2": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "screen3"
+      },
+      "screen3": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "none"
+      }
+    }
+  },
+  "flow2": {
+    "intialRoute": "screen1",
+    "routes": {
+      "screen1": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "screen2"
+      },
+      "screen2": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "screen3"
+      },
+      "screen3": {
+        "fields": ["name", "email", "pass"],
+        "nextScreen": "none"
+      }
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+import Dashboard from '../pages/Dashboard'
 import Screen1 from '../pages/Screen-1'
 import Screen2 from '../pages/Screen-2'
 import Screen3 from '../pages/Screen-3'
@@ -14,7 +15,7 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact render={() => <div>Dash</div>} />
+        <Route path="/" exact component={Dashboard} />
         <Route path="/screen-1" exact component={Screen1} />
         <Route path="/screen-2" exact component={Screen2} />
         <Route path="/screen-3" exact component={Screen3} />

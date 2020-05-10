@@ -1,0 +1,59 @@
+{
+  "flows": [
+    {
+      "id": 1,
+      "name": "flow 1"
+    },
+    {
+      "id": 2,
+      "name": "flow 2"
+    },
+    {
+      "id": 3,
+      "name": "flow 3"
+    }
+  ],
+
+  "flowItens": [
+    {
+      "id": 1,
+      "flowID": 1,
+      "screenName": "screen1", 
+      "fields": ["name", "email", "pass"],
+      "hasNextScreen": true,
+      "nextScreenID": 2,
+      "initial": true
+    },
+    {
+      "id": 2,
+      "flowID": 1,
+      "screenName": "screen2", 
+      "fields": ["name", "email", "pass"],
+      "hasNextScreen": true,
+      "nextScreenID": 3 
+    },
+    {
+      "id": 3,
+      "flowID": 1,
+      "screenName": "screen3", 
+      "fields": ["name", "email", "pass"],
+      "hasNextScreen": false
+    },
+    {
+      "id": 4,
+      "flowID": 2,
+      "screenName": "screen2", 
+      "fields": ["name", "email", "pass"],
+      "hasNextScreen": true,
+      "nextScreenID": 5,
+      "initial": true
+    },
+    {
+      "id": 5,
+      "flowID": 2,
+      "screenName": "screen2", 
+      "fields": ["name", "email", "pass"],
+      "hasNextScreen": false
+    }
+  ]
+}
