@@ -1,4 +1,4 @@
-# React dinamic form with custom flow 
+# React dynamic form with custom flow 
 
 ## Checklist
 
