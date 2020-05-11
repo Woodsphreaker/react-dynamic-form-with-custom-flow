@@ -31,7 +31,6 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
   margin: 20px 0 60px 0;
   padding: 0 20px;
   background: rgba(255, 255, 255, 0.9);
