@@ -1,124 +1,226 @@
-[ 
-  {
-    "name": "Lorem Ipsum",
-    "intialRoute": "screen1",
-    "color": "#758ee6",
-    "routes": {
-      "screen1": {
-        "color": "#264653",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "screen2"
-      },
-      "screen2": {
-        "color": "#2a9d8f",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "screen3"
-      },
-      "screen3": {
-        "color": "#e9c46a",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "none"
-      }
+{
+  "flows": [
+    {
+      "id": 1,
+      "name": "Flow 1",
+      "color": "#758ee6",
+      "screens": [
+        {
+          "id": 1,
+          "screenName": "Screen 1",
+          "route": "screen-1",
+          "color": "#264653",
+          "hasNextScreen": true,
+          "nextScreenID": 2,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            },
+            {
+              "name": "phone",
+              "label": "Telefone"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "screenName": "Screen 2", 
+          "route": "screen-2",
+          "color": "#2a9d8f",
+          "hasNextScreen": true,
+          "nextScreenID": 3,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "flowID": 1,
+          "screenName": "Screen 3", 
+          "route": "screen-3",
+          "color": "#e9c46a",
+          "hasNextScreen": false,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "flowID": 1,
+          "screenName": "Screen 4", 
+          "route": "screen-4",
+          "color": "#f4a261",
+          "hasNextScreen": false,
+          "initial": true,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "flowID": 1,
+          "screenName": "Screen 5", 
+          "route": "screen-5",
+          "color": "#e76f51",
+          "hasNextScreen": false,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "flowID": 1,
+          "screenName": "Screen 6", 
+          "route": "screen-6",
+          "color": "#028090",
+          "hasNextScreen": false,
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Flow 2",
+      "color": "#758ee6",
+      "screens": [
+        {
+          "screenName": "Screen 2", 
+          "route": "screen-2", 
+          "color": "#2a9d8f",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ],
+          "hasNextScreen": true,
+          "nextScreenID": 5,
+          "initial": true
+        },
+        {
+          "screenName": "Screen 3", 
+          "route": "screen-3", 
+          "color": "#e9c46a",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ],
+          "hasNextScreen": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Flow 3",
+      "color": "#758ee6",
+      "screens": [
+        {
+          "screenName": "Screen 2", 
+          "route": "screen-2", 
+          "color": "#2a9d8f",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Nome"
+            },
+            {
+              "name": "email",
+              "label": "Email"
+            },
+            {
+              "name": "pass",
+              "label": "Password"
+            }
+          ],
+          "hasNextScreen": true,
+          "nextScreenID": 5,
+          "initial": true
+        }
+      ]
     }
-  },
-  {
-    "name": "Lorem Ipsum",
-    "intialRoute": "screen1",
-    "color": "#758ee6",
-    "routes": {
-      "screen1": {
-        "color": "#264653",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "screen2"
-      },
-      "screen2": {
-        "color": "#2a9d8f",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "screen3"
-      },
-      "screen3": {
-        "color": "#e9c46a",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nome"
-          },
-          {
-            "name": "email",
-            "label": "Email"
-          },
-          {
-            "name": "pass",
-            "label": "Password"
-          }
-        ],
-        "nextScreen": "none"
-      }
-    }
-  }
-]
+  ]
+}

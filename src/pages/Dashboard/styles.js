@@ -12,6 +12,7 @@ const hoverColor = ({ bgColor }) => {
 
 const Root = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100%;
 `
 
 const FlowTitle = styled.h1`
