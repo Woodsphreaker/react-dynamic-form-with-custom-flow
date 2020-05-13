@@ -10,11 +10,6 @@ const hoverColor = ({ bgColor }) => {
   return ''
 }
 
-const Root = styled.div`
-  background-color: rgba(0, 0, 0, 0.8);
-  min-height: 100%;
-`
-
 const FlowTitle = styled.h1`
   margin: 20px 0;
   color: #ccc;
@@ -23,7 +18,7 @@ const FlowTitle = styled.h1`
 const Container = styled.div`
   width: 100%;
   max-width: 1000px;
-  min-height: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 20px;
 `
@@ -116,7 +111,6 @@ const Button = styled.button`
 `
 
 export {
-  Root,
   FlowTitle,
   Container,
   Content,

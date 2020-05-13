@@ -1,5 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
+
+import WrapperRoutes from './wrapperRouter'
 
 import Dashboard from '../pages/Dashboard'
 import Screen1 from '../pages/Screen-1'
@@ -15,15 +17,15 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Dashboard} />
-        <Route path="/screen-1" exact component={Screen1} />
-        <Route path="/screen-2" exact component={Screen2} />
-        <Route path="/screen-3" exact component={Screen3} />
-        <Route path="/screen-4" exact component={Screen4} />
-        <Route path="/screen-5" exact component={Screen5} />
-        <Route path="/screen-6" exact component={Screen6} />
-        <Route path="/screen-7" exact component={Screen7} />
-        <Route path="/screen-8" exact component={Screen8} />
+        <WrapperRoutes path="/" exact component={Dashboard} />
+        <WrapperRoutes path="/screen-1" exact component={Screen1} />
+        <WrapperRoutes path="/screen-2" exact component={Screen2} />
+        <WrapperRoutes path="/screen-3" exact component={Screen3} />
+        <WrapperRoutes path="/screen-4" exact component={Screen4} />
+        <WrapperRoutes path="/screen-5" exact component={Screen5} />
+        <WrapperRoutes path="/screen-6" exact component={Screen6} />
+        <WrapperRoutes path="/screen-7" exact component={Screen7} />
+        <WrapperRoutes path="/screen-8" exact component={Screen8} />
       </Switch>
     </Router>
   )

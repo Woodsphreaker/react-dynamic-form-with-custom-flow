@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
 
 import {
-  Root,
   FlowTitle,
   Container,
   Content,
@@ -117,9 +116,7 @@ function Dashboard() {
 
   return (
     <>
-      <Root>
-        <Container>{renderFlowStructure(flows)}</Container>
-      </Root>
+      <Container>{renderFlowStructure(flows)}</Container>
     </>
     // <Section bgColor="#264653">Screen 1</Section>
     // <Section bgColor="#2a9d8f">Screen 2</Section>

@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Form, Input, Select, Textarea } from '../../components/Form'
 
-// import { Container } from './styles';
+import {
+  Container,
+  PreviewDataPannel,
+  InfoPannel,
+} from '../../components/Common/styles'
 
 function Screen2() {
+  const [formData, setFormData] = useState({})
+
   const handleSubmit = (values) => {
-    console.log(values)
+    setFormData(values)
   }
 
-  const INITIAL = {
-    name1: 'lalalala',
-    pass: '123456',
-  }
+  // const INITIAL = {
+  //   name1: 'lalalala',
+  //   pass: '123456',
+  // }
 
   const formMaping = (keyId, fieldName) => {
     const fields = {
@@ -49,8 +55,20 @@ function Screen2() {
   return (
     <>
       <Form initialState={{ name: 'lalala', gen: 'c' }} onSubmit={handleSubmit}>
+        <InfoPannel>
+          <h1>Screen 2</h1>
+          <h4>Flow 1</h4>
+        </InfoPannel>
         {loadFormFields(['name1', 'pass'])}
-        <button type="submit"> Send </button>
+        <Container>
+          <button type="button"> Prev </button>
+          <button type="submit"> Preview Data </button>
+          <button type="button"> Next </button>
+        </Container>
+        <PreviewDataPannel>
+          <h1>Payload</h1>
+          <div>{JSON.stringify(formData)}</div>
+        </PreviewDataPannel>
       </Form>
     </>
   )

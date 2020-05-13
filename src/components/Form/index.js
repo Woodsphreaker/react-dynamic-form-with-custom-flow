@@ -1,4 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
+import { Container, Content } from './styles'
 
 const serializeForm = (formData) => {
   return Array.from(formData).reduce((acc, [key, value]) => {
@@ -22,8 +25,6 @@ const setProps = (source, props) => {
 }
 
 const populateForm = (initialState, children) => {
-  console.log(children, [].concat(...children))
-
   return [].concat(...children).map(({ props, ...rest }) => ({
     ...rest,
     props: setProps(initialState, props),
@@ -38,9 +39,13 @@ const wrapperSubmit = (callback, event) => {
 
 export const Form = ({ initialState, onSubmit, children }) => {
   return (
-    <form onSubmit={(event) => wrapperSubmit(onSubmit, event)}>
-      {initialState ? populateForm(initialState, children) : children}
-    </form>
+    <Container>
+      <Content>
+        <form onSubmit={(event) => wrapperSubmit(onSubmit, event)}>
+          {initialState ? populateForm(initialState, children) : children}
+        </form>
+      </Content>
+    </Container>
   )
 }
 
@@ -51,3 +56,23 @@ export const Select = ({ children, ...props }) => {
 }
 
 export const Textarea = (props) => <textarea {...props} />
+
+Form.propTypes = {
+  initialState: PropTypes.shape({}),
+  onSubmit: PropTypes.func,
+  children: PropTypes.element,
+}
+
+Form.defaultProps = {
+  initialState: {},
+  onSubmit: () => {},
+  children: PropTypes.element,
+}
+
+Select.propTypes = {
+  children: PropTypes.element,
+}
+
+Select.defaultProps = {
+  children: PropTypes.element,
+}
