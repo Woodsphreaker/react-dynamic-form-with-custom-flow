@@ -1,0 +1,295 @@
+{
+  "flows": [
+    {
+      "id": 1,
+      "name": "Flow 1",
+      "color": "#758ee6"
+    },
+    {
+      "id": 2,
+      "name": "Flow 2",
+      "color": "#758ee6"
+    },
+    {
+      "id": 3,
+      "name": "Flow 3",
+      "color": "#758ee6"
+    },
+    {
+      "id": 4,
+      "name": "Flow 4",
+      "color": "#758ee6"
+    }
+  ],
+
+  "screens": [
+    {
+      "id": 1,
+      "flowId": 1,
+      "screenName": "Screen 1",
+      "route": "screen-1",
+      "color": "#264653",
+      "hasNextScreen": true,
+      "nextScreenID": 2,
+      "initial": true
+    },
+    {
+      "id": 2,
+      "flowId": 1,
+      "screenName": "Screen 2", 
+      "route": "screen-2",
+      "color": "#2a9d8f",
+      "hasNextScreen": true,
+      "nextScreenID": 3
+    },
+    {
+      "id": 3,
+      "flowId": 1,
+      "screenName": "Screen 3", 
+      "route": "screen-3",
+      "color": "#e9c46a",
+      "hasNextScreen": false
+    },
+    {
+      "id": 4,
+      "flowId": 1,
+      "screenName": "Screen 4", 
+      "route": "screen-4",
+      "color": "#f4a261",
+      "hasNextScreen": false 
+    },
+    {
+      "id": 5,
+      "flowId": 1,
+      "screenName": "Screen 5", 
+      "route": "screen-5",
+      "color": "#e76f51",
+      "hasNextScreen": false 
+    },
+    {
+      "id": 6,
+      "flowId": 1,
+      "screenName": "Screen 6", 
+      "route": "screen-6",
+      "color": "#028090",
+      "hasNextScreen": false
+    },
+    {
+      "id": 7,
+      "flowId": 2,
+      "screenName": "Screen 2", 
+      "route": "screen-2", 
+      "color": "#2a9d8f",
+      "hasNextScreen": true,
+      "nextScreenID": 5,
+      "initial": true
+    },
+    {
+      "id": 8,
+      "flowId": 2,
+      "screenName": "Screen 3", 
+      "route": "screen-3", 
+      "color": "#e9c46a",
+      "hasNextScreen": false
+    },
+    {
+      "id": 9,
+      "flowId": 3,
+      "screenName": "Screen 2", 
+      "route": "screen-2", 
+      "color": "#2a9d8f",
+      "hasNextScreen": true,
+      "nextScreenID": 5,
+      "initial": true
+    },
+    {
+      "id": 10,
+      "flowId": 4,
+      "screenName": "Screen 2", 
+      "route": "screen-2", 
+      "color": "#2a9d8f",
+      "hasNextScreen": true,
+      "nextScreenID": 5,
+      "initial": true
+    }
+  ],
+
+  "fields": [
+    {
+      "id": 1,
+      "screenId": 1,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        },
+        {
+          "name": "phone",
+          "label": "Telefone"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "screenId": 2,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "screenId": 3,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "screenId": 4,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "screenId": 5,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "screenId": 6,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "screenId": 7,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "screenId": 8,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "email",
+          "label": "Email"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "screenId": 9,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "screenId": 10,
+      "itens": [
+        {
+          "name": "name",
+          "label": "Nome"
+        },
+        {
+          "name": "pass",
+          "label": "Password"
+        }
+      ]
+    }
+  ]
+}

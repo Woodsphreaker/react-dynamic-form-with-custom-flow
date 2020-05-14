@@ -12,6 +12,7 @@
           "color": "#264653",
           "hasNextScreen": true,
           "nextScreenID": 2,
+          "initial": true,
           "fields": [
             {
               "name": "name",
@@ -81,8 +82,7 @@
           "screenName": "Screen 4", 
           "route": "screen-4",
           "color": "#f4a261",
-          "hasNextScreen": false,
-          "initial": true,
+          "hasNextScreen": false, 
           "fields": [
             {
               "name": "name",

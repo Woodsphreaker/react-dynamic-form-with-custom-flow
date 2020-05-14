@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect, useCallback, Fragment } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import api from '../../services/api'
@@ -19,14 +19,58 @@ function Dashboard() {
   const history = useHistory()
   const [flows, setFlows] = useState([])
 
-  useEffect(() => {
-    const getFlows = async () => {
-      const response = await api.get('/flows')
-      setFlows(response.data)
-    }
-
-    getFlows()
+  const getData = useCallback(async (path) => {
+    const { data } = await api.get(path)
+    return data
   }, [])
+
+  const getFlowScreenItems = useCallback(
+    (screenID) =>
+      getData(`screens/${screenID}/fields`).then(([item]) => {
+        if (item) {
+          return item.itens
+        }
+        return []
+      }),
+    [getData]
+  )
+
+  const getFlowScreens = useCallback(
+    (flowID) => {
+      return getData(`flows/${flowID}/screens`).then((screens) =>
+        Promise.all(
+          screens.map((screen) =>
+            getFlowScreenItems(screen.id).then((fields) => ({
+              ...screen,
+              fields,
+            }))
+          )
+        )
+      )
+    },
+    [getData, getFlowScreenItems]
+  )
+
+  const makeFlowsData = useCallback(
+    (flowRecords) => {
+      const flowData = flowRecords.map((flow) => {
+        return getFlowScreens(flow.id).then((screens) => ({
+          ...flow,
+          screens,
+        }))
+      })
+      Promise.all(flowData).then((response) => setFlows(response))
+    },
+    [getFlowScreens]
+  )
+
+  useEffect(() => {
+    getData('/flows')
+      .then(makeFlowsData)
+      .catch((error) => {
+        throw error
+      })
+  }, [getData, makeFlowsData])
 
   const handleClick = (path) => {
     history.push(path)
@@ -53,6 +97,10 @@ function Dashboard() {
   }
 
   const renderScreenItems = (screens) => {
+    if (!screens) {
+      return <Card />
+    }
+
     const screenItems = screens.map((screen) => {
       const { fields } = screen
 
