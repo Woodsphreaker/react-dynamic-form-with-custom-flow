@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, Fragment } from 'react'
 import { useHistory } from 'react-router-dom'
-
 import api from '../../services/api'
+import Loading from '../../components/Loading'
 
 import {
   FlowTitle,
@@ -18,6 +18,7 @@ import {
 function Dashboard() {
   const history = useHistory()
   const [flows, setFlows] = useState([])
+  const [isLoading, setLoading] = useState(true)
 
   const getData = useCallback(async (path) => {
     const { data } = await api.get(path)
@@ -59,7 +60,10 @@ function Dashboard() {
           screens,
         }))
       })
-      Promise.all(flowData).then((response) => setFlows(response))
+      Promise.all(flowData).then((response) => {
+        setFlows(response)
+        setLoading(false)
+      })
     },
     [getFlowScreens]
   )
@@ -164,7 +168,11 @@ function Dashboard() {
 
   return (
     <>
-      <Container>{renderFlowStructure(flows)}</Container>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Container>{renderFlowStructure(flows)}</Container>
+      )}
     </>
     // <Section bgColor="#264653">Screen 1</Section>
     // <Section bgColor="#2a9d8f">Screen 2</Section>
