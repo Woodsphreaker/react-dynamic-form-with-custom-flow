@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom'
 import api from '../../services/api'
 import Loading from '../../components/Loading'
 
+import * as FlowService from '../../services/FlowService'
+
 import {
   FlowTitle,
   Container,
@@ -20,61 +22,52 @@ function Dashboard() {
   const [flows, setFlows] = useState([])
   const [isLoading, setLoading] = useState(true)
 
-  const getData = useCallback(async (path) => {
-    const { data } = await api.get(path)
-    return data
+  const getFields = async (screens) => {
+    const requestFields = await Promise.all(
+      screens.map(async (screen) => {
+        const {
+          data: [{ itens }],
+        } = await FlowService.getScreenFields(screen.id)
+        return {
+          ...screen,
+          fields: itens,
+        }
+      })
+    )
+    return requestFields
+  }
+
+  const getScreens = useCallback(async (flowID) => {
+    const screenList = await FlowService.getFlowScreens(flowID)
+    const screenListWithFields = await getFields(screenList.data)
+    return screenListWithFields
   }, [])
 
-  const getFlowScreenItems = useCallback(
-    (screenID) =>
-      getData(`screens/${screenID}/fields`).then(([item]) => {
-        if (item) {
-          return item.itens
+  const getFlows = useCallback(async () => {
+    const flowsList = await FlowService.getFlows()
+    return flowsList
+  }, [])
+
+  const makeFlowData = useCallback(async () => {
+    const { data: flowsList } = await getFlows()
+
+    const screensList = await Promise.all(
+      flowsList.map(async (flowItem) => {
+        const screen = await getScreens(flowItem.id)
+        return {
+          ...flowItem,
+          screens: screen,
         }
-        return []
-      }),
-    [getData]
-  )
-
-  const getFlowScreens = useCallback(
-    (flowID) => {
-      return getData(`flows/${flowID}/screens`).then((screens) =>
-        Promise.all(
-          screens.map((screen) =>
-            getFlowScreenItems(screen.id).then((fields) => ({
-              ...screen,
-              fields,
-            }))
-          )
-        )
-      )
-    },
-    [getData, getFlowScreenItems]
-  )
-
-  const makeFlowsData = useCallback(
-    (flowRecords) => {
-      const flowData = flowRecords.map((flow) => {
-        return getFlowScreens(flow.id).then((screens) => ({
-          ...flow,
-          screens,
-        }))
       })
-      Promise.all(flowData).then((response) => {
-        setFlows(response)
-        setLoading(false)
-      })
-    },
-    [getFlowScreens]
-  )
+    )
+
+    setFlows(screensList)
+    setLoading(false)
+  }, [getScreens, getFlows])
 
   useEffect(() => {
-    getData('/flows')
-      .then(makeFlowsData)
-      .catch((error) => {
-        throw error
-      })
-  }, [getData, makeFlowsData])
+    makeFlowData()
+  }, [makeFlowData])
 
   const handleClick = (path) => {
     history.push(path)
@@ -149,6 +142,10 @@ function Dashboard() {
   }
 
   const renderFlowStructure = (flowsList) => {
+    if (isLoading) {
+      return <Loading />
+    }
+
     return flowsList.map((flowItem) => {
       const { screens } = flowItem
       return (
@@ -168,11 +165,7 @@ function Dashboard() {
 
   return (
     <>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <Container>{renderFlowStructure(flows)}</Container>
-      )}
+      <Container>{renderFlowStructure(flows)}</Container>
     </>
     // <Section bgColor="#264653">Screen 1</Section>
     // <Section bgColor="#2a9d8f">Screen 2</Section>
